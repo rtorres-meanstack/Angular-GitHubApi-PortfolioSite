@@ -18,6 +18,12 @@ import { CurrentSkillsetComponent } from './modules/home/component/current-skill
 import { CalculatorComponent } from './modules/calculator/pages/calculator/calculator.component';
 import { KillowattCalculatorComponent } from './modules/calculator/component/killowatt-calculator/killowatt-calculator.component';
 import { ContactusHeaderComponent } from './modules/contact/components/contactus-header/contactus-header.component';
+import { CalculatorHeaderComponent } from './modules/calculator/component/calculator-header/calculator-header.component';
+import { TaskManagerComponent } from './modules/task-manager/task-manager.component';
+import { CreateTaskComponent } from './modules/task-manager/components/create-task/create-task.component';
+import { ViewTaskComponent } from './modules/task-manager/components/view-task/view-task.component';
+import { UpdateTaskComponent } from './modules/task-manager/components/update-task/update-task.component';
+import { DeleteTaskComponent } from './modules/task-manager/components/delete-task/delete-task.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -41,7 +47,13 @@ const appRoutes: Routes = [
     CurrentSkillsetComponent,
     CalculatorComponent,
     KillowattCalculatorComponent,
-    ContactusHeaderComponent
+    ContactusHeaderComponent,
+    CalculatorHeaderComponent,
+    TaskManagerComponent,
+    CreateTaskComponent,
+    ViewTaskComponent,
+    UpdateTaskComponent,
+    DeleteTaskComponent
   ],
   imports: [
     BrowserModule,
