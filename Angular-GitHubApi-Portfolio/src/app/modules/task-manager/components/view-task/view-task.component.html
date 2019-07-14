@@ -1,1 +1,8 @@
-<p>view-task works!</p>
+<div>
+    <p>{{model.id}}. {{model.name}} | {{model.timeToComplete}}</p>
+  <p>{{model.description}}</p>
+  <p>{{model.necessaryItems}}</p>
+  <!-- <button (click)="goBack()">Go Back</button> -->
+  <button (click)="onClickDelete()" type="button" class="btn btn-danger pr-3" >Delete Task</button>&nbsp;
+  <button type="button" class="btn btn-primary" (click)="goBack()"> Go Back </button>
+</div>

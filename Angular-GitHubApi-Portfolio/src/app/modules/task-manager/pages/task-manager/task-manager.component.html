@@ -1,0 +1,48 @@
+<main class="fluid-container">
+    <section id="taskManager_header" class="w-100">
+        <article>
+            <app-task-manager-header></app-task-manager-header>
+        </article>
+    </section>
+    <section id="taskManager_viewTask" class="container border rounded p-5">
+        <article class="col-12 pt-3">
+            <div class="row">
+
+                <div class="col-12">
+                  <h5>Add a task now!</h5>
+                    <p><button type="button" class="btn btn-primary" routerLink="/add" routerLinkActive="active">Add a Task</button></p>
+                </div>
+                <div class="col-12"><h5>Click on a task to get started!</h5></div>
+              </div>
+              
+              <div class="card mb-3 shadow" *ngFor="let task of tasks">
+                  <div class="card-header bg-primary">
+                      <h5 class="card-title text-white">{{task.name}}</h5>
+                  </div>
+                  <div class="card-body">
+                    <p class="card-text">Time To Complete: {{task.timeToComplete}}</p>
+                    <hr>
+                    <div class="pt-3">
+                      <button type="button" class="btn btn-success" data-dismiss="modal" routerLink="/update/{{task.id}}" routerLinkActive="active">Update Task</button>
+                      <button type="button" class="btn btn-primary" routerLink="/view/{{task.id}}" routerLinkActive="active">View Task</button>
+                    </div>
+                  </div>
+                </div>
+        </article>
+    </section>
+    <section id="taskManager_updateTask" class="container border rounded bg-primary p-5">
+        <article class="col-12 pt-3">
+            <app-update-task></app-update-task>
+        </article>
+    </section>
+    <section id="taskManager_createTask" class="container border rounded bg-success p-5">
+        <article class="col-12 pt-3">
+            <app-create-task></app-create-task>
+        </article>
+    </section>
+    <section id="taskManager_deleteTask" class="container border rounded bg-danger p-5">
+        <article class="col-12 pt-3">
+            <app-delete-task></app-delete-task>
+        </article>
+    </section>
+</main>
