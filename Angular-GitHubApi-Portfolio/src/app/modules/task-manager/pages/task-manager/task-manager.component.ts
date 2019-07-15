@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Task } from '../../shared/models/task';
+import { CreateTaskComponent } from '../../components/create-task/create-task.component';
 
 @Component({
   selector: 'app-task-manager',

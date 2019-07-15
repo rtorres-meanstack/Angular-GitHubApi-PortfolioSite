@@ -6,6 +6,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TasksService } from './modules/task-manager/service/tasks.service';
+
 import { HomeComponent } from './modules/home/pages/home/home.component';
 import { HeaderComponent } from './core/header/header.component';
 import { FooterComponent } from './core/footer/footer.component';
@@ -29,7 +31,6 @@ import { TaskManagerHeaderComponent } from './modules/task-manager/components/ta
 
 import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
 
-
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'calculator', component: CalculatorComponent },
@@ -37,22 +38,10 @@ const appRoutes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
-  {
-    path: 'view/:id',
-    component: ViewTaskComponent
-  },
-  {
-    path: 'add',
-    component: CreateTaskComponent
-  },
-  {
-    path: 'update/:id',
-    component: UpdateTaskComponent
-  },
-  {
-    path: 'delete/:id',
-    component: DeleteTaskComponent
-  },
+  { path: 'view/:id', component: ViewTaskComponent },
+  { path: 'add', component: CreateTaskComponent },
+  { path: 'update/:id', component: UpdateTaskComponent },
+  { path: 'delete/:id', component: DeleteTaskComponent },
   {
     path: '',
     redirectTo: '/tasks',
@@ -91,7 +80,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes,{ enableTracing: true }),
     SlimLoadingBarModule
   ],
-  providers: [],
+  providers: [ TasksService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

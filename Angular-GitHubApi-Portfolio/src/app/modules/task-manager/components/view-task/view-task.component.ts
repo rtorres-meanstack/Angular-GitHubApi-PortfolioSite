@@ -37,7 +37,7 @@ export class ViewTaskComponent implements OnInit {
   onClickDelete(){
     this.deletedTask.emit(this.task.id);
   }
-  
+
   goBack(){
     this.Location.back();
   }
