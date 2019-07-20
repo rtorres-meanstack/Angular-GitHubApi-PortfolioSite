@@ -5,16 +5,16 @@ let Task = new Schema({
     task_name: {
         type: String
     },
-    description: {
+    task_description: {
         type: String
     },
-    timeToComplete: {
+    task_timeToComplete: {
         type: String
     },
-    necessaryItems: {
+    task_necessaryItems: {
         type: String
     }
 },{
-    collection: 'task'
+    collection: 'tasks'
 });
 module.exports = mongoose.model('Task', Task)

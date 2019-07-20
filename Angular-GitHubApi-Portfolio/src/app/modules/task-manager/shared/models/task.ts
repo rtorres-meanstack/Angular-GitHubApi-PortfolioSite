@@ -1,8 +1,8 @@
-export class Task {
+export default class Task {
     // [x: string]: any;
     id: number;
-    name: string;
-    description: string;
-    timeToComplete: string;
-    necessaryItems: string;
+    task_name: string;
+    task_description: string;
+    task_timeToComplete: string;
+    task_necessaryItems: string;
 }

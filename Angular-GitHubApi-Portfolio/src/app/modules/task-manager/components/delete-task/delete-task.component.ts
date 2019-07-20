@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TasksService } from '../../service/tasks.service';
 
 @Component({
   selector: 'app-delete-task',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeleteTaskComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(private ts: TasksService,) { }
 
   ngOnInit() {
   }

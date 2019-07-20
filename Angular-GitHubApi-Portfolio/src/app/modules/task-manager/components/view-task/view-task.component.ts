@@ -1,8 +1,9 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Task } from '../../shared/models/task';
+// import { Task } from '../../shared/models/task';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Location } from '@angular/common';
+import { TasksService } from '../../service/tasks.service';
 
 @Component({
   selector: 'app-view-task',
@@ -10,36 +11,37 @@ import { Location } from '@angular/common';
   styleUrls: ['./view-task.component.css']
 })
 export class ViewTaskComponent implements OnInit {
-  private tasksRoute = 'http://localhost:3000/tasks';
+  // private tasksRoute = 'http://localhost:3000/tasks';
 
-  @Input() task: Task;
-  @Output() deletedTask: EventEmitter<number> = new EventEmitter();
+  // @Input() task: Task;
+  // @Output() deletedTask: EventEmitter<number> = new EventEmitter();
   constructor(
+    private ts: TasksService,
     private route: ActivatedRoute,
     private Location: Location,
     private http: HttpClient
   ) { }
 
   ngOnInit() {
-    this.getTask();
+    // this.getTask();
   }
 
-  getTask(){
-    const id = +this.route.snapshot.paramMap.get('id');
-    console.log('id: ' + id);
-    this.http.get(this.tasksRoute + '/' + id).subscribe
-    (task => {
-      this.task = task as Task;
-      console.log('Task', this.task);
-    })
-  }
+  // getTask(){
+  //   const id = +this.route.snapshot.paramMap.get('id');
+  //   console.log('id: ' + id);
+  //   this.http.get(this.ts + '/' + id).subscribe
+  //   (task => {
+  //     this.task = task as Task;
+  //     console.log('Task', this.task);
+  //   })
+  // }
 
-  onClickDelete(){
-    this.deletedTask.emit(this.task.id);
-  }
+  // onClickDelete(){
+  //   this.deletedTask.emit(this.task.id);
+  // }
 
-  goBack(){
-    this.Location.back();
-  }
+  // goBack(){
+  //   this.Location.back();
+  // }
 
 }

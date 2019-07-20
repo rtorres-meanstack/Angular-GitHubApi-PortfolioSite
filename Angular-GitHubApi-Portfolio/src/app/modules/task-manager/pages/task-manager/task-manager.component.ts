@@ -1,7 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Task } from '../../shared/models/task';
-import { CreateTaskComponent } from '../../components/create-task/create-task.component';
+// import { Task } from '../../shared/models/task';
+
+import { TasksService } from '../../service/tasks.service';
 
 @Component({
   selector: 'app-task-manager',
@@ -9,20 +10,20 @@ import { CreateTaskComponent } from '../../components/create-task/create-task.co
   styleUrls: ['./task-manager.component.css']
 })
 export class TaskManagerComponent implements OnInit {
-  private tasksRoute = 'http://localhost:3000/tasks';
-  public tasks: Task[];
-  @Input() task: Task;
-  @Output() taskDeleted: EventEmitter<number> = new EventEmitter();
+  // private tasksRoute = 'http://localhost:3000/tasks';
+  // public tasks: Task[];
+  // @Input() task: Task;
+  // @Output() taskDeleted: EventEmitter<number> = new EventEmitter();
 
-  constructor(private http: HttpClient) { }
+  constructor(private ts: TasksService, private http: HttpClient) { }
   ngOnInit() {
-    this.getTasks();
+    // this.getTasks();
   }
-  getTasks(){
-    this.http.get<Task[]>(this.tasksRoute).subscribe(tasks => {
-      this.tasks = tasks;
-      console.log('Tasks', this.tasks);
-    });
-  }
+  // getTasks(){
+  //   this.http.get<Task[]>(this.ts).subscribe(tasks => {
+  //     this.tasks = tasks;
+  //     console.log('Tasks', this.tasks);
+  //   });
+  // }
 
 }

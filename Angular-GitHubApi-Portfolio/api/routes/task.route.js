@@ -4,7 +4,7 @@ const taskRoutes = express.Router();
 
 let Task = require('../models/Task');
 
-taskRoutes.route('/add').post (function (req, res){
+taskRoutes.route('/create').post (function (req, res){
     let task = new Task(req.body);
     task.save()
         .then(task => {
@@ -16,12 +16,12 @@ taskRoutes.route('/add').post (function (req, res){
 });
 
 taskRoutes.route('/').get(function (req, res){
-    Task.find(function (err, task){
+    Task.find(function (err, tasks){
         if(err){
             console.log(err);
         }
         else {
-            res.json(task);
+            res.json(tasks);
         }
     });
 });
@@ -39,9 +39,9 @@ taskRoutes.route('/update/"id').post(function (req, res){
             return next(new Error('Could not load Document'));
         else{
             task.task_name = req.body.task_name;
-            task.description = req.body.description;
-            task.timeToComplete = req.body.timeToComplete;
-            task.necessaryItems = req.body.necessaryItems;
+            task.task_description = req.body.task_description;
+            task.task_timeToComplete = req.body.task_timeToComplete;
+            task.task_necessaryItems = req.body.task_necessaryItems;
 
             task.save().then(task => {
                 res.json('Update Complete');
@@ -54,7 +54,7 @@ taskRoutes.route('/update/"id').post(function (req, res){
 });
 
 taskRoutes.route('/delete/:id').get(function (req, res){
-    Task.findByIdAndRemove({_id: req.params.id}, function(err, business){
+    Task.findByIdAndRemove({_id: req.params.id}, function(err, task){
         if(err) res.json(err);
         else res.json('Successfully removed');
     });

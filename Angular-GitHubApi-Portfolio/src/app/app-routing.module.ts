@@ -14,17 +14,17 @@ import { PageNotFoundComponent } from './modules/page-not-found/pages/page-not-f
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'calculator', component: CalculatorComponent },
-  { path: 'task-manager', component: TaskManagerComponent },
+  { path: 'task', component: TaskManagerComponent },
   { path: 'contact', component: ContactComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
-  { path: 'task-manager/view/:id', component: ViewTaskComponent },
-  { path: 'task-manager/create', component: CreateTaskComponent },
-  { path: 'task-manager/update/:id', component: UpdateTaskComponent },
-  { path: 'task-manager/delete/:id', component: DeleteTaskComponent },
+  { path: 'task/view/:id', component: ViewTaskComponent },
+  { path: 'task/create', component: CreateTaskComponent },
+  { path: 'task/update/:id', component: UpdateTaskComponent },
+  { path: 'task/delete/:id', component: DeleteTaskComponent },
   {
     path: '',
-    redirectTo: '/tasks',
+    redirectTo: '/home',
     pathMatch: 'full'
   }
 ];

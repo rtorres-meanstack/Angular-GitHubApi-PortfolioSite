@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validator, Validators } from '@angular/forms';
-import { Task } from '../../shared/models/task';
-
-import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
-
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+// import { Router } from '@angular/router';
 
 import { TasksService } from '../../service/tasks.service';
 
@@ -17,7 +13,8 @@ export class CreateTaskComponent implements OnInit {
   // private tasksRoute = 'http://localhost:3000/tasks';
   // model: Task = new Task();
   angForm: FormGroup;
-  constructor(private ts: TasksService, private router: Router, private fb: FormBuilder) {
+  // add to constructor private router: Router,
+  constructor(private ts: TasksService, private fb: FormBuilder) {
     this.createForm();
   }
 
@@ -27,15 +24,15 @@ export class CreateTaskComponent implements OnInit {
   createForm(){
     this.angForm = this.fb.group({
       task_name: ['', Validators.required],
-      description: ['', Validators.required],
-      timeToComplete: ['', Validators.required],
-      necessaryItems: ['', Validators.required]
-    })
+      task_description: ['', Validators.required],
+      task_timeToComplete: ['', Validators.required],
+      task_necessaryItems: ['', Validators.required]
+    });
   }
 
-  // addTask(task_name, description, timeToComplete, necessaryItems){
-  //   this.ts.addTask(task_name, description, timeToComplete, necessaryItems)
-  // }
+  addTask(task_name, task_description, task_timeToComplete, task_necessaryItems){
+    this.ts.addTask(task_name, task_description, task_timeToComplete, task_necessaryItems);
+  }
 
   // onSubmit(){
   //   this.http.post(this.ts, this.model)

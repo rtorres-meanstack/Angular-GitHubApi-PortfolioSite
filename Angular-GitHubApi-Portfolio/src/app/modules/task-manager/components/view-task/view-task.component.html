@@ -1,7 +1,7 @@
 <div>
-    <p>{{model.id}}. {{model.name}} | {{model.timeToComplete}}</p>
-  <p>{{model.description}}</p>
-  <p>{{model.necessaryItems}}</p>
+    <p>{{model.id}}. {{model.task_name}} | {{model.task_timeToComplete}}</p>
+  <p>{{model.task_description}}</p>
+  <p>{{model.task_necessaryItems}}</p>
   <!-- <button (click)="goBack()">Go Back</button> -->
   <button (click)="onClickDelete()" type="button" class="btn btn-danger pr-3" >Delete Task</button>&nbsp;
   <button type="button" class="btn btn-primary" (click)="goBack()"> Go Back </button>
