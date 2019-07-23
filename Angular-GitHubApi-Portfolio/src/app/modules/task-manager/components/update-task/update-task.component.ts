@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+
 import { TasksService } from '../../service/tasks.service';
 
 @Component({
@@ -10,47 +10,40 @@ import { TasksService } from '../../service/tasks.service';
   styleUrls: ['./update-task.component.css']
 })
 export class UpdateTaskComponent implements OnInit {
-  // private tasksRoute = 'http://localhost:3000/tasks';
 
-  public task: any;
+  task: any = {};
+  angForm: FormGroup;
+
   constructor(
-    private ts: TasksService,
-    private router: Router,
     private route: ActivatedRoute,
-    private location: Location,
-    private http: HttpClient
-  ) {}
+    private router: Router,
+    private ts: TasksService,
+    private fb: FormBuilder
+  ) {
+    this.createForm();
+  }
+
+  createForm(){
+    this.angForm = this.fb.group({
+      task_name: ['', Validators.required ],
+      task_description: ['', Validators.required ],
+      task_timeToComplete: ['', Validators.required ],
+      task_necessaryItems: ['', Validators.required ]
+    })
+  }
 
   ngOnInit() {
-    // this.getTasks();
+    this.route.params.subscribe(params => {
+      this.ts.updateTask(params['id']).subscribe(res => {
+        this.task = res;
+      });
+    });
   }
 
-  onSubmit() {
-    const id = +this.route.snapshot.paramMap.get('id');
-    console.log('id: ' + id);
-
-    this.http
-      .put(this.ts + '/' + id, this.task)
-      .toPromise()
-      .then(() => this.router.navigate(['']));
+  changeTask(task_name, task_description, task_necessaryItems, task_timeToComplete) {
+    this.route.params.subscribe(params => {
+      this.ts.changeTask(task_name, task_description, task_necessaryItems, task_timeToComplete, params['id']);
+        this.router.navigate(['task']);
+    });
   }
-
-  // getTasks() {
-  //   const id = +this.route.snapshot.paramMap.get('id');
-  //   console.log('id: ' + id);
-  //   this.http
-  //     .get(this.ts + '/' + id)
-  //     .subscribe(task => (this.task = task));
-  // }
-  // onClickDelete(taskId){
-  //   let taskIndex = 0;
-  //   for(let task of this.task){
-  //     if(task.id === taskId){
-  //       this.task.splice(taskIndex, 1);
-  //       break;
-  //     }
-  //     taskIndex++;
-  //   }
-  // }
-
 }

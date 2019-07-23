@@ -12,30 +12,10 @@
     </section>
     <section id="taskManager_viewTask" class="container border rounded p-5">
         <article class="col-12 pt-3">
-            <div class="row">
-                <!-- <div class="col-12">
-                  <h5>Add a task now!</h5>
-                    <p><button type="button" class="btn btn-primary" routerLink="task-manager/create" routerLinkActive="active">Add a Task</button></p>
-                </div> -->
-                <div class="col-12"><h5>Click on a task to get started!</h5></div>
-              </div>
-              
-              <div class="card mb-3 shadow" *ngFor="let task of tasks">
-                  <div class="card-header bg-primary">
-                      <h5 class="card-title text-white">{{task.name}}</h5>
-                  </div>
-                  <div class="card-body">
-                    <p class="card-text">Time To Complete: {{task.timeToComplete}}</p>
-                    <hr>
-                    <div class="pt-3">
-                      <button type="button" class="btn btn-success" data-dismiss="modal" routerLink="/update/{{task.id}}" routerLinkActive="active">Update Task</button>
-                      <button type="button" class="btn btn-primary" routerLink="/view/{{task.id}}" routerLinkActive="active">View Task</button>
-                    </div>
-                  </div>
-                </div>
+            <app-view-task></app-view-task>
         </article>
     </section>
-    <section id="taskManager_updateTask" class="container border rounded bg-primary p-5">
+    <!-- <section id="taskManager_updateTask" class="container border rounded bg-primary p-5">
         <article class="col-12 pt-3">
             <app-update-task></app-update-task>
         </article>
@@ -44,5 +24,5 @@
         <article class="col-12 pt-3">
             <app-delete-task></app-delete-task>
         </article>
-    </section>
+    </section> -->
 </main>
