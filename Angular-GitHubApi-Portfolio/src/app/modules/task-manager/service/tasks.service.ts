@@ -28,6 +28,11 @@ export class TasksService {
       .http
       .get(`${this.uri}`);
   }
+  getVersion(){
+    return this
+            .http
+            .get(`${this.versionuri}`);
+  }
   updateTask(id){
     return this
             .http
@@ -43,7 +48,7 @@ export class TasksService {
     };
     this
       .http
-      .post(`${this.uri}/update/${id}`, obj)
+      .post(`${this.uri}/change/${id}`, obj)
       .subscribe(res => console.log('Done'));
   }
 

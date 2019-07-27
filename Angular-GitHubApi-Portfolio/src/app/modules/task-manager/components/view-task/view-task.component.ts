@@ -1,8 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-
-import { ActivatedRoute } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
-import { Location } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 import { TasksService } from '../../service/tasks.service';
 import Task from '../../shared/models/task';
 
@@ -15,10 +11,7 @@ export class ViewTaskComponent implements OnInit {
   tasks: Task[];
   
   constructor(
-    private ts: TasksService,
-    private route: ActivatedRoute,
-    private Location: Location,
-    private http: HttpClient
+    private ts: TasksService
   ) { }
 
   ngOnInit() {
