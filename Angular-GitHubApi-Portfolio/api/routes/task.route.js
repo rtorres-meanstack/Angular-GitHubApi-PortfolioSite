@@ -26,15 +26,20 @@ taskRoutes.route('/').get(function (req, res){
     });
 });
 
-taskRoutes.route('/edit/:id').get(function (req, res){
+// taskRoutes.route('/update/:id').get(function (req, res){
+//     let id = req.params.id;
+//     Task.findById(id, function (err, task){
+//         res.json(task)
+//     });
+// });
+taskRoutes.route('/update/:id').get(function (req, res){
     let id = req.params.id;
-    Task.findById(id, function (err, task){
-        res.json(task)
-    });
-});
-
-taskRoutes.route('/update/"id').post(function (req, res){
-    Task.findById(req.params.id, function(err, next, task){
+    Task.findById(id, function(err, task){
+        res.json(task);
+    })
+})
+taskRoutes.route('/change/:id').post(function (req, res){
+    Task.findById(req.params.id, function(err, task){
         if(!task)
             return next(new Error('Could not load Document'));
         else{
