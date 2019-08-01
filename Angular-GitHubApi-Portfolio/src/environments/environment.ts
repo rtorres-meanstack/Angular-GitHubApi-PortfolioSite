@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  DB: 'mongodb://localhost:27017/ang7NodeJsCrud'
 };
 
 /*

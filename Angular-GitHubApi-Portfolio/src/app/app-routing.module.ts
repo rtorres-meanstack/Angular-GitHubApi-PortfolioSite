@@ -14,8 +14,6 @@ const routes: Routes = [
   { path: 'calculator', component: CalculatorComponent },
   { path: 'task', component: TaskManagerComponent },
   { path: 'contact', component: ContactComponent },
-  
-  // { path: 'view/:id', component: ViewTaskComponent },
   { path: 'task/create', component: CreateTaskComponent },
   { path: 'task/update/:id', component: UpdateTaskComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },

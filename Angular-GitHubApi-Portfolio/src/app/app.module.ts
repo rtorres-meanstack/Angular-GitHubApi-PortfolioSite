@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { AppComponent } from './app.component';
 import { TasksService } from './modules/task-manager/service/tasks.service';
 
@@ -27,27 +28,23 @@ import { TaskManagerComponent } from './modules/task-manager/pages/task-manager/
 import { CreateTaskComponent } from './modules/task-manager/components/create-task/create-task.component';
 import { ViewTaskComponent } from './modules/task-manager/components/view-task/view-task.component';
 import { UpdateTaskComponent } from './modules/task-manager/components/update-task/update-task.component';
-import { DeleteTaskComponent } from './modules/task-manager/components/delete-task/delete-task.component';
 import { TaskManagerHeaderComponent } from './modules/task-manager/components/task-manager-header/task-manager-header.component';
 
-import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
-
 const appRoutes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'calculator', component: CalculatorComponent },
-  { path: 'task-manager', component: TaskManagerComponent },
-  { path: 'contact', component: ContactComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: '**', component: PageNotFoundComponent },
-  { path: 'view/:id', component: ViewTaskComponent },
-  { path: 'add', component: CreateTaskComponent },
-  { path: 'update/:id', component: UpdateTaskComponent },
-  { path: 'delete/:id', component: DeleteTaskComponent },
-  {
-    path: '',
-    redirectTo: '/tasks',
-    pathMatch: 'full'
-  }
+  // { path: 'home', component: HomeComponent },
+  // { path: 'calculator', component: CalculatorComponent },
+  // { path: 'task-manager', component: TaskManagerComponent },
+  // { path: 'contact', component: ContactComponent },
+  // { path: '', redirectTo: '/home', pathMatch: 'full' },
+  // { path: '**', component: PageNotFoundComponent },
+  // { path: 'view/:id', component: ViewTaskComponent },
+  // { path: 'add', component: CreateTaskComponent },
+  // { path: 'update/:id', component: UpdateTaskComponent },
+  // {
+  //   path: '',
+  //   redirectTo: '/tasks',
+  //   pathMatch: 'full'
+  // }
 ]
 
 @NgModule({
@@ -70,7 +67,6 @@ const appRoutes: Routes = [
     CreateTaskComponent,
     ViewTaskComponent,
     UpdateTaskComponent,
-    DeleteTaskComponent,
     TaskManagerHeaderComponent
   ],
   imports: [
@@ -79,10 +75,9 @@ const appRoutes: Routes = [
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes,{ enableTracing: true }),
-    SlimLoadingBarModule,
     ReactiveFormsModule
   ],
-  providers: [ TasksService ],
+  providers: [ TasksService, {provide: LocationStrategy, useClass: HashLocationStrategy} ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
