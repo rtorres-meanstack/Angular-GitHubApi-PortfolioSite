@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { TaskManagerComponent } from './pages/task-manager/task-manager.component';
 import { ViewTaskComponent } from './components/view-task/view-task.component';
 import { UpdateTaskComponent } from './components/update-task/update-task.component';
-import { DeleteTaskComponent } from './components/delete-task/delete-task.component';
 import { CreateTaskComponent } from './components/create-task/create-task.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
@@ -15,8 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
     TaskManagerComponent,
     ViewTaskComponent,
     CreateTaskComponent,
-    UpdateTaskComponent,
-    DeleteTaskComponent
+    UpdateTaskComponent
   ],
   imports: [
     CommonModule, FormsModule, RouterModule, HttpClientModule
@@ -25,8 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
     TaskManagerComponent,
     ViewTaskComponent,
     CreateTaskComponent,
-    UpdateTaskComponent,
-    DeleteTaskComponent
+    UpdateTaskComponent
   ]
 })
 export class TaskManagerModule { }

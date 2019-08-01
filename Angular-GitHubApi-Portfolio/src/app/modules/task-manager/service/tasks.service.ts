@@ -28,11 +28,11 @@ export class TasksService {
       .http
       .get(`${this.uri}`);
   }
-  getVersion(){
-    return this
-            .http
-            .get(`${this.versionuri}`);
-  }
+  // getVersion(){
+  //   return this
+  //           .http
+  //           .get(`${this.versionuri}`);
+  // }
   updateTask(id){
     return this
             .http

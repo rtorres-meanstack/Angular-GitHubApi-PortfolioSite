@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-// import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import { TasksService } from '../../service/tasks.service';
 
@@ -10,15 +10,17 @@ import { TasksService } from '../../service/tasks.service';
   styleUrls: ['./create-task.component.css']
 })
 export class CreateTaskComponent implements OnInit {
-  // private tasksRoute = 'http://localhost:3000/tasks';
-  // model: Task = new Task();
   angForm: FormGroup;
+  returnUrl: string;
+
   // add to constructor private router: Router,
-  constructor(private ts: TasksService, private fb: FormBuilder) {
+  constructor(private ts: TasksService, private fb: FormBuilder, private route: ActivatedRoute,
+    private router: Router) {
     this.createForm();
   }
 
   ngOnInit() {
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/task';
   }
 
   createForm(){
@@ -32,13 +34,6 @@ export class CreateTaskComponent implements OnInit {
 
   addTask(task_name, task_description, task_timeToComplete, task_necessaryItems){
     this.ts.addTask(task_name, task_description, task_timeToComplete, task_necessaryItems);
+    this.router.navigateByUrl(this.returnUrl);
   }
-
-  // onSubmit(){
-  //   this.http.post(this.ts, this.model)
-  //   .subscribe(() => {
-  //     this.router.navigate(['']);
-  //   })
-  // }
-
 }
