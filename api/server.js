@@ -8,7 +8,7 @@ const express = require('express'),
     config = require('./DB');
     
     // Serve only the static files form the dist directory
-    app.use(express.static('./dist/Angular-GitHubApi-Portfolio'));
+    app.use(express.static('../dist/Angular-GitHubApi-Portfolio'));
     app.get('/*', function(req,res) {
         res.sendFile(path.join(__dirname,'/dist/Angular-GitHubApi-Portfolio/index.html'));
     });
