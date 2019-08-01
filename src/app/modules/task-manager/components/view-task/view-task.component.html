@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-12"><h5>Click on a task to get started!</h5></div>
+  </div>
+  
+  <div class="card mb-3 shadow" *ngFor="let task of tasks">
+    <div class="card-header bg-primary">
+        <h5 class="card-title text-white">{{task.task_name}}</h5>
+    </div>
+    <div class="card-body">
+      <p class="card-text">Time To Complete: {{task.task_timeToComplete}}</p>
+      <p class="card-text">Necessary Items: {{task.task_necessaryItems}}</p>
+      <hr>
+      <div class="pt-3">
+        <a class="btn btn-success" [routerLink]="['update', task._id]">Update Task</a>
+        <a class="btn btn-danger" (click)="deleteTask(task._id)">Delete</a>
+      </div>
+    </div>
+  </div>

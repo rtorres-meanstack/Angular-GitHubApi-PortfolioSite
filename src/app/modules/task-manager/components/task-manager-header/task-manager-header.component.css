@@ -1,0 +1,12 @@
+.carousel-item {
+    min-height: 300px;
+    height: auto;
+    width: 100%;
+}
+
+.bgImage2 {
+    background-image: url('../../../../../assets/media/images/3px-tile.png'),linear-gradient(to top, rgba(207, 0, 0, 0.53), rgba(0, 0, 0, 0.73)), url('../../../../../assets/media/images/beautiful-beach.jpeg');
+    background-position: 100%, 100%, 50% 0%;
+    background-size: 80px, cover, cover;
+    background-repeat: repeat, no-repeat, no-repeat;
+}
