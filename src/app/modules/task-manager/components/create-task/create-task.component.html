@@ -1,0 +1,52 @@
+<div class="col-12 pl-0 pt-3">
+    <a class="btn btn-success" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+      Add a Task
+    </a>
+</div>
+  <div class="collapse pt-3" id="collapseExample">
+    <div class="card card-body pt-3">
+        <form [formGroup]="angForm" novalidate>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="task_name">Task Name:</label>
+                <input type="text" class="form-control" formControlName="task_name" #task_name>
+              </div>
+              <div *ngIf="angForm.controls['task_name'].invalid && (angForm.controls['task_name'].dirty || angForm.controls['task_name'].touched)" class="alert alert-danger">
+                <div *ngIf="angForm.controls['task_name'].errors.required">
+                  Task Name is required.
+                </div>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="task_description">Description:</label>
+                <input type="text" class="form-control" formControlName="task_description" #task_description>
+              </div>
+            </div>
+            <div *ngIf="angForm.controls['task_description'].invalid && (angForm.controls['task_description'].dirty || angForm.controls['task_description'].touched)" class="alert alert-danger">
+              <div *ngIf="angForm.controls['task_description'].errors.required">
+                Description is required.
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="task_timeToComplete">Time To Complete: </label>
+              <input type="text" class="form-control" formControlName="task_timeToComplete" #task_timeToComplete>
+            </div>
+            <div *ngIf="angForm.controls['task_timeToComplete'].invalid && (angForm.controls['task_timeToComplete'].dirty || angForm.controls['task_timeToComplete'].touched)" class="alert alert-danger">
+              <div *ngIf="angForm.controls['task_timeToComplete'].errors.required">
+                  Time to Complete is required.
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="task_necessaryItems">Necessary Items: </label>
+              <textarea type="text" class="form-control" formControlName="task_necessaryItems" #task_necessaryItems></textarea>
+            </div>
+            <div *ngIf="angForm.controls['task_necessaryItems'].invalid && (angForm.controls['task_necessaryItems'].dirty || angForm.controls['task_necessaryItems'].touched)" class="alert alert-danger">
+              <div *ngIf="angForm.controls['task_necessaryItems'].errors.required">
+                  Necessary Items is required.
+              </div>
+            </div>
+            <div class="form-group">
+                <button (click)="addTask(task_name.value, task_description.value, task_timeToComplete.value, task_necessaryItems.value)" class="btn btn-primary" [disabled]="angForm.pristine || angForm.invalid">Submit</button>
+            </div>
+        </form>
+    </div>
+  </div>

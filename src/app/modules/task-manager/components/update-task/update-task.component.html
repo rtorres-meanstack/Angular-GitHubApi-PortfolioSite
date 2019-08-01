@@ -1,0 +1,48 @@
+<div class="pt-3" >
+    <div class="card card-body pt-3" *ngIf="task">
+        <form [formGroup]="angForm" novalidate>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="task_name">Task Name:</label>
+                <input class="form-control" type="text" formControlName="task_name"
+                [(ngModel)] = "task.task_name" #task_name>
+              </div>
+              <div *ngIf="angForm.controls['task_name'].invalid && (angForm.controls['task_name'].dirty || angForm.controls['task_name'].touched)" class="alert alert-danger">
+                <div *ngIf="angForm.controls['task_name'].errors.required">
+                    Task Name is required.
+                </div>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="task_description">Description:</label>
+                <input type="text" class="form-control" formControlName="task_description" [(ngModel)] = "task.task_description" #task_description>
+              </div>
+            </div>
+            <div *ngIf="angForm.controls['task_description'].invalid && (angForm.controls['task_description'].dirty || angForm.controls['task_description'].touched)" class="alert alert-danger">
+                <div *ngIf="angForm.controls['task_description'].errors.required">
+                    Task Description is required.
+                </div>
+            </div>
+            <div class="form-group">
+              <label for="task_timeToComplete">Time To Complete: </label>
+              <input type="text" class="form-control" formControlName="task_timeToComplete" placeholder="Time To Complete" [(ngModel)] = "task.task_timeToComplete" #task_timeToComplete>
+            </div>
+            <div *ngIf="angForm.controls['task_timeToComplete'].invalid && (angForm.controls['task_timeToComplete'].dirty || angForm.controls['task_timeToComplete'].touched)" class="alert alert-danger">
+                <div *ngIf="angForm.controls['task_timeToComplete'].errors.required">
+                    Task Time to Complete is required.
+                </div>
+            </div>
+            <div class="form-group">
+              <label for="task_necessaryItems">Necessary Items: </label>
+              <textarea type="text" class="form-control" formControlName="task_necessaryItems" placeholder="Necessary Items" [(ngModel)] = "task.task_necessaryItems" #task_necessaryItems></textarea>
+            </div>
+            <div *ngIf="angForm.controls['task_necessaryItems'].invalid && (angForm.controls['task_necessaryItems'].dirty || angForm.controls['task_necessaryItems'].touched)" class="alert alert-danger">
+                <div *ngIf="angForm.controls['task_necessaryItems'].errors.required">
+                    Task Time to Complete is required.
+                </div>
+            </div>
+            <div class="form-group">
+                <button (click)="changeTask(task_name.value, task_description.value, task_necessaryItems.value, task_timeToComplete.value)" class="btn btn-primary" [disabled]="angForm.invalid">Update Task</button>
+            </div>
+        </form>
+    </div>
+  </div>
