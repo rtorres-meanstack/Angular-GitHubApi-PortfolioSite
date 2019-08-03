@@ -12,7 +12,8 @@ const express = require('express'),
     const taskRoute = require('./routes/task.route');
     mongoose.Promise = global.Promise;
 
-    mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/task", { useNewUrlParser: true }).then(
+    // mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/task", { useNewUrlParser: true }).then(
+    mongoose.connect(config.DB || "mongodb://localhost:27017/task", { useNewUrlParser: true }).then(
         () => { console.log('Database is connected') },
         err => { console.log('Can not connect to the database' + err)}
     );

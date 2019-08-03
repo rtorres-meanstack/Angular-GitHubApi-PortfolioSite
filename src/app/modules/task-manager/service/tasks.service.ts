@@ -7,7 +7,6 @@ import { HttpClient } from '@angular/common/http';
 export class TasksService {
 
   uri = 'http://localhost:8080/task';
-  versionuri = '/getversion';
 
   constructor(private http: HttpClient) { }
 
@@ -28,11 +27,7 @@ export class TasksService {
       .http
       .get(`${this.uri}`);
   }
-  // getVersion(){
-  //   return this
-  //           .http
-  //           .get(`${this.versionuri}`);
-  // }
+ 
   updateTask(id){
     return this
             .http
