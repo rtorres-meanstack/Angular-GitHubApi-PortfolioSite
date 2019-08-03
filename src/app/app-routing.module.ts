@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'task/create', component: CreateTaskComponent },
   { path: 'task/update/:id', component: UpdateTaskComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
 

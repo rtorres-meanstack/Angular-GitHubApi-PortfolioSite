@@ -7,7 +7,12 @@ const express = require('express'),
     mongoose = require('mongoose'),
     config = require('./DB');
     
-    // Serve only the static files form the dist directory
+    /// Serve only the static files form the dist directory    
+    app.use(express.static(__dirname + '/dist'));
+
+    app.get('/*', function(req,res) {  
+        res.sendFile(path.join(__dirname+'/dist/index.html'));   
+    }); 
 
     const taskRoute = require('./routes/task.route');
     mongoose.Promise = global.Promise;
