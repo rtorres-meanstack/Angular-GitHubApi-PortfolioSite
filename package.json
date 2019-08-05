@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start1": "ng serve",
-    "start": "node ./api/server.js",
+    "start": "node ../../server.js",
     "postinstall": "ng build --prod='true' --output-path dist",
     "build": "ng build",
     "test": "ng test",
