@@ -1,7 +1,7 @@
 const express = require('express'),
 // const dotenv = require('dotenv'),
     dotenv = require('dotenv').config(),
-    path = require('path'),
+    const path = require('path'),
     bodyParser = require('body-parser'),
     cors = require('cors'),
     mongoose = require('mongoose'),

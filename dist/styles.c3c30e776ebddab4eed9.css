@@ -1,8 +1,4 @@
-/*!
- * Copyright (C) 2016 Sergey Akopkokhyants
- * This project is licensed under the terms of the MIT license.
- * https://github.com/akserg/ng2-slim-loading-bar
- */.slim-loading-bar{position:fixed;margin:0;padding:0;top:0;left:0;right:0;z-index:99999}.slim-loading-bar-progress{margin:0;padding:0;z-index:99998;background-color:green;color:green;box-shadow:0 0 10px 0;height:2px;opacity:0;transition:all .5s ease-in-out}*{font-family:Helvetica,Arial,sans-serif}#socialMedia{padding:5px;transition:-webkit-transform .2s;transition:transform .2s;transition:transform .2s,-webkit-transform .2s;width:30px;height:30px;margin:0 auto}.zoom{width:500px;-webkit-transform:scale(1.5);transform:scale(1.5)}.bg-tictac{background-image:url(tic-tac-toe.a2e9b7c1a25043babe15.png)}.bg-connect{background-image:url(connectwork.2afaf81ac14b94f76f48.png)}.bg-qbkls{background-image:url(qbkls.d808fef0da889f09742d.png)}.bg-hex-dark{background-image:url(hex-dark.00dc0de315c0dff17dbc.png)}.card{min-height:262px}/*!
+*{font-family:Helvetica,Arial,sans-serif}#socialMedia{padding:5px;transition:-webkit-transform .2s;transition:transform .2s;transition:transform .2s,-webkit-transform .2s;width:30px;height:30px;margin:0 auto}.zoom{width:500px;-webkit-transform:scale(1.5);transform:scale(1.5)}.bg-tictac{background-image:url(tic-tac-toe.a2e9b7c1a25043babe15.png)}.bg-connect{background-image:url(connectwork.2afaf81ac14b94f76f48.png)}.bg-qbkls{background-image:url(qbkls.d808fef0da889f09742d.png)}.bg-hex-dark{background-image:url(hex-dark.00dc0de315c0dff17dbc.png)}.card{min-height:262px}/*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
  * Copyright 2011-2019 Twitter, Inc.
