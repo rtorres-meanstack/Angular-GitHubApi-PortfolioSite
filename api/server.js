@@ -1,9 +1,9 @@
 const express = require('express'),
 // const dotenv = require('dotenv'),
 
-const http = require('http');
-const path = require('path');
-const app = express();
+http = require('http');
+path = require('path');
+app = express();
 
 dotenv = require('dotenv').config(),
 // var path = require('path'),
@@ -47,6 +47,6 @@ const port = process.env.PORT || 8080;
 app.set(port);
 const server = http.createServer(app);
 
-const server = app.listen(port, () => {
+app.listen(port, () => {
     console.log('Listening on port ' + port);
 });
