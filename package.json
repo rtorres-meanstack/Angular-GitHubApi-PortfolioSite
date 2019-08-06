@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "node api/server.js",
-    "postinstall": "ng build --prod --output-path dist",
+    "postinstall": "ng build - aot -prod",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -12,6 +12,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-devkit/build-optimizer": "^0.802.0",
     "@angular/animations": "~8.0.3",
     "@angular/cli": "~8.0.6",
     "@angular/common": "~8.0.3",
