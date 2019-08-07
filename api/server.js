@@ -40,7 +40,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/tasks", {
 app.use(bodyParser.json());
 app.use(cors());
 
-app.use('/task', taskRoute)
+app.use('/tasks', taskRoute)
 
 const port = process.env.PORT || 8080;
 
