@@ -31,7 +31,7 @@ const taskRoute = require('./routes/task.route');
 mongoose.Promise = global.Promise;
 
 // mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/task", { useNewUrlParser: true }).then(
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/tasks", { useNewUrlParser: true }).then(
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27743/tasks", { useNewUrlParser: true }).then(
     () => { console.log('Database is connected') },
     err => { console.log('Can not connect to the database' + err)}
 );
@@ -42,7 +42,7 @@ app.use(cors());
 
 app.use('/tasks', taskRoute)
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 27743;
 
 app.set(port);
 const server = http.createServer(app);
