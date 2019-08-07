@@ -18,9 +18,9 @@ config = require('./DB');
 // res.sendFile(path.join(__dirname, '/dist/index.html'));
 // });
 
-app.use(express.static(path.join(__dirname, './dist/Angular-GitHubApi-Portfolio')));
+app.use(express.static(path.join(__dirname, '../dist/Angular-GitHubApi-Portfolio')));
 app.get("/", function(req, res) {
-res.sendFile(path.join(__dirname + "./dist/Angular-GitHubApi-Portfolio/index.html"));
+res.sendFile(path.join(__dirname + "/dist/Angular-GitHubApi-Portfolio/index.html"));
 });
 
 // app.get('/*', function(req, res) {
