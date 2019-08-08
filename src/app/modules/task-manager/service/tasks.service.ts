@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TasksService {
 
-  uri = 'http://localhost:8080/tasks';
+  uri = 'http://localhost:' + process.env.PORT + '/tasks';
 
   constructor(private http: HttpClient) { }
 
