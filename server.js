@@ -41,6 +41,20 @@ app.get("/api/tasks", function(req, res) {
 });
 
 app.post("/api/tasks", function(req, res){
+    var newContact = req.body;
+    newContact.createDate = new Date();
+
+    if (!req.body.name){
+        handleError(res, "Invalid user input", "MUst provide a name.", 400);
+    } else {
+        db.collection(TASKS_COLLECTION).insertOne(newContact, function(err, doc) {
+            if (err) {
+                handleError(res, err.message, "Failed to create new task.");
+            } else {
+                res.status(201).json(doc.ops[0]);
+            }
+        });
+    }
 });
 app.get("/api/tasks/:id", function(req, res){
 });
@@ -48,3 +62,17 @@ app.put("/api/tasks/:id", function(req, res){
 });
 app.delete("/api/tasks/:id", function(req, res){
 });
+
+
+
+// app.get("/api/tasks", function(req, res) {
+// });
+
+// app.post("/api/tasks", function(req, res){
+// });
+// app.get("/api/tasks/:id", function(req, res){
+// });
+// app.put("/api/tasks/:id", function(req, res){
+// });
+// app.delete("/api/tasks/:id", function(req, res){
+// });
