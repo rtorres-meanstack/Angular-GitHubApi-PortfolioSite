@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 
 var db;
 
-mongodb.MongoClient.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/tasks", function (err, client) {
+mongodb.MongoClient.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/tasks", { useNewUrlParser: true }, function (err, client) {
     if(err){
         console.log(err);
         process.exit(1);
