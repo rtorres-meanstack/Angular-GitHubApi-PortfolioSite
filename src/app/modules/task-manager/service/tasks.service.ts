@@ -6,6 +6,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TasksService {
 
+  // For Local
+  // uri = 'http://localhost:8080/tasks';
+
+  // For Heroku
   uri = '/tasks';
 
   constructor(private http: HttpClient) { }
