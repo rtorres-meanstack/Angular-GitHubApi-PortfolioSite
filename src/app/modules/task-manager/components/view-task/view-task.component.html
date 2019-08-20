@@ -12,7 +12,7 @@
       <hr>
       <div class="pt-3">
         <a class="btn btn-success" [routerLink]="['update', task._id]">Update Task</a>
-        <a class="btn btn-danger" (click)="deleteTask(task._id)">Delete</a>
+        <a class="btn btn-danger" type="button" (click)="deleteTask(task._id)">Delete</a>
       </div>
     </div>
   </div>
