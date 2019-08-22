@@ -24,7 +24,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 30%;
+    width: 35%;
     font-weight: bold;
     font-size: 13px;
     color: #ffffff;
@@ -69,4 +69,9 @@
     line-height: 35px;
     color: #ffffff;
     color: rgba(0, 0, 0, 0.4);
+}
+@media only screen and (max-width: 600px){
+    .skillbar-title {
+        font-size: 11px;
+    }
 }

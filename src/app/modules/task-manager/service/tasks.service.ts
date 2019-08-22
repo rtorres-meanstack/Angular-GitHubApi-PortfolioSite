@@ -35,8 +35,7 @@ export class TasksService {
   updateTask(id){
     return this
             .http
-            .get(`${this.uri}/update/${id}`);
-  }
+            .get(`${this.uri}/update/${id}`);  }
 
   changeTask(task_name, task_description, task_timeToComplete, task_necessaryItems, id){
     const obj = {
@@ -54,6 +53,6 @@ export class TasksService {
   deleteTask(id){
     return this
               .http
-              .get(`${this.uri}/delete/${id}`);
+              .get(`${this.uri}/delete/${id}`)
   }
 }

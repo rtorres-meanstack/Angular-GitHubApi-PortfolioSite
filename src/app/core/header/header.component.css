@@ -1,7 +1,7 @@
 .navbar.solid {
-    background-color: rgb(0, 121, 177);
+    background-color: rgba(0,0,0,.9);
     transition: background-color 1s ease 0s;
-    box-shadow: 0 0 4px grey;
+    box-shadow: 0 0 4px #000000;
 }
 .navbar {
     background-color: transparent;
