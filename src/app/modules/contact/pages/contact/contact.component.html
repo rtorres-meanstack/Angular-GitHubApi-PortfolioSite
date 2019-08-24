@@ -6,7 +6,56 @@
     </section>
     <section id="rafael_intro" class="container">
         <article class="col-12 pt-3">
-            <p>Contact Us Stuff here</p>
+            <div class="col-12 pl-0 pt-3">
+                <div class="card card-body pt-3">
+                  <form [formGroup]="angForm" novalidate>
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label for="contact_name">Full Name:</label>
+                          <input type="text" class="form-control" formControlName="contact_name" #contact_name>
+                        </div>
+                        <div *ngIf="angForm.controls['contact_name'].invalid && (angForm.controls['contact_name'].dirty || angForm.controls['contact_name'].touched)" class="alert alert-danger">
+                          <div *ngIf="angForm.controls['contact_name'].errors.required">
+                            Full Name is required.
+                          </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="contact_description">Inquiry Type:</label>
+                          <input type="text" class="form-control" formControlName="contact_description" #contact_description>
+                        </div>
+                      </div>
+                      <div *ngIf="angForm.controls['contact_description'].invalid && (angForm.controls['contact_description'].dirty || angForm.controls['contact_description'].touched)" class="alert alert-danger">
+                        <div *ngIf="angForm.controls['contact_description'].errors.required">
+                          Inquiry Type is required.
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="contact_phonenumber">Phone Number: </label>
+                        <input type="text" class="form-control" formControlName="contact_timeToComplete" #contact_timeToComplete>
+                      </div>
+                      <div *ngIf="angForm.controls['contact_timeToComplete'].invalid && (angForm.controls['contact_timeToComplete'].dirty || angForm.controls['contact_timeToComplete'].touched)" class="alert alert-danger">
+                        <div *ngIf="angForm.controls['contact_timeToComplete'].errors.required">
+                            Phone Number is required.
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="contact_necessaryItems">Necessary Items: </label>
+                        <textarea type="text" class="form-control" formControlName="contact_necessaryItems" #contact_necessaryItems></textarea>
+                      </div>
+                      <div *ngIf="angForm.controls['contact_necessaryItems'].invalid && (angForm.controls['contact_necessaryItems'].dirty || angForm.controls['contact_necessaryItems'].touched)" class="alert alert-danger">
+                        <div *ngIf="angForm.controls['contact_necessaryItems'].errors.required">
+                            Necessary Items is required.
+                        </div>
+                      </div>
+                      <div class="form-group">
+                          <button (click)="addContact(contact_name.value, contact_description.value, contact_timeToComplete.value, contact_necessaryItems.value)" class="btn btn-primary" type="button" [disabled]="angForm.pristine || angForm.invalid">Submit</button>
+                      </div>
+                  </form>
+              </div>
+              </div>
+                <div class="collapse pt-3" id="collapseExample">
+                  
+                </div>
         </article>
     </section>
     <section id="services" class="container-fluid bg-dark">

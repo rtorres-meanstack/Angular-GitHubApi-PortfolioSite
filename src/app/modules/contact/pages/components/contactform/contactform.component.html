@@ -1,0 +1,47 @@
+<div class="col-12 pl-0 pt-3">
+    <div class="card card-body pt-3">
+      <form [formGroup]="angForm" novalidate>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="contact_name">Full Name:</label>
+              <input type="text" class="form-control" formControlName="contact_name" #contact_name>
+            </div>
+            <div *ngIf="angForm.controls['contact_name'].invalid && (angForm.controls['contact_name'].dirty || angForm.controls['contact_name'].touched)" class="alert alert-danger">
+              <div *ngIf="angForm.controls['contact_name'].errors.required">
+                Full Name is required.
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="contact_inquiry">Inquiry Type:</label>
+              <input type="text" class="form-control" formControlName="contact_inquiry" #contact_inquiry>
+            </div>
+          </div>
+          <div *ngIf="angForm.controls['contact_inquiry'].invalid && (angForm.controls['contact_inquiry'].dirty || angForm.controls['contact_inquiry'].touched)" class="alert alert-danger">
+            <div *ngIf="angForm.controls['contact_inquiry'].errors.required">
+              Inquiry Type is required.
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="contact_phonenumber">Phone Number: </label>
+            <input type="text" class="form-control" formControlName="contact_phonenumber" #contact_phonenumber>
+          </div>
+          <div *ngIf="angForm.controls['contact_phonenumber'].invalid && (angForm.controls['contact_phonenumber'].dirty || angForm.controls['contact_phonenumber'].touched)" class="alert alert-danger">
+            <div *ngIf="angForm.controls['contact_phonenumber'].errors.required">
+                Phone Number is required.
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="contact_message">Necessary Items: </label>
+            <textarea type="text" class="form-control" formControlName="contact_message" #contact_message></textarea>
+          </div>
+          <div *ngIf="angForm.controls['contact_message'].invalid && (angForm.controls['contact_message'].dirty || angForm.controls['contact_message'].touched)" class="alert alert-danger">
+            <div *ngIf="angForm.controls['contact_message'].errors.required">
+                Necessary Items is required.
+            </div>
+          </div>
+          <div class="form-group">
+              <button (click)="addContact(contact_name.value, contact_inquiry.value, contact_phonenumber.value, contact_message.value)" class="btn btn-primary" type="button" [disabled]="angForm.pristine || angForm.invalid">Submit</button>
+          </div>
+      </form>
+  </div>
+</div>

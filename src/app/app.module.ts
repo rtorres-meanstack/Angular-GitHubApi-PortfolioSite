@@ -29,6 +29,7 @@ import { CreateTaskComponent } from './modules/task-manager/components/create-ta
 import { ViewTaskComponent } from './modules/task-manager/components/view-task/view-task.component';
 import { UpdateTaskComponent } from './modules/task-manager/components/update-task/update-task.component';
 import { TaskManagerHeaderComponent } from './modules/task-manager/components/task-manager-header/task-manager-header.component';
+import { ContactformComponent } from './modules/contact/pages/components/contactform/contactform.component';
 
 const appRoutes: Routes = [
   // { path: 'home', component: HomeComponent },
@@ -67,7 +68,8 @@ const appRoutes: Routes = [
     CreateTaskComponent,
     ViewTaskComponent,
     UpdateTaskComponent,
-    TaskManagerHeaderComponent
+    TaskManagerHeaderComponent,
+    ContactformComponent
   ],
   imports: [
     BrowserModule,
